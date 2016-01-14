@@ -10,11 +10,15 @@
 $font-stack: Helvetica, sans-serif;
 $background-color: #000000;
 $primary-color: #000000;
+$gray-color: #ddd;
 $max-width: 1200px;
-
 // for responsive
 $medium-up: 600px;
 $large-up: 1000px;
+
+@mixin heading-font-regular {
+	font-family: 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif;;
+}
 
 body {
   font: 100% $font-stack;
@@ -36,8 +40,6 @@ body {
 // 	display: table;
 // 	clear: both;
 // }
-
-
 
 // Using for in SASS
 /* 3- Columns
@@ -90,13 +92,14 @@ $button-list: success rgb(28, 184, 65), error rgb(202, 60, 60), warning rgb(223,
 table {
 	width: 100%;
 	float: left;
-   margin: 0 0 2em;
+    margin: 0 0 2em;
 	thead {
-		border-bottom: 3px solid $primary-color;
+		border-bottom:4px solid $primary-color;
 		th {
 			padding: 0.35em 0 .35em;
-       		font-weight: 400;
+	        font-weight: 400;
 			text-align: left;
+			@include heading-font-regular;
 			font-size: 1.25em;
 		}
 		
@@ -128,6 +131,7 @@ table {
 		td {
 			padding: 0.35em 0 .35em;
 			text-align: left;
+			@include heading-font-regular;
 			font-size: 1.25em;
 		}
 	}
@@ -140,6 +144,7 @@ table {
 		thead {
 			border-bottom: 3px solid $primary-color;
 			th {
+
 			}
 			
 		}
@@ -153,4 +158,16 @@ table {
 			}
 		}
 	}
+}
+
+//Using while in SASS 
+/* 6- Alerts
+----------------------*/
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	moz-border-radius: 4px;
+	webkit-border-radius: 4px;
 }

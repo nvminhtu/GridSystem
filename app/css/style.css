@@ -97,13 +97,14 @@ table {
 }
 
 table thead {
-  border-bottom: 3px solid #000000;
+  border-bottom: 4px solid #000000;
 }
 
 table thead th {
   padding: 0.35em 0 .35em;
   font-weight: 400;
   text-align: left;
+  font-family: 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 1.25em;
 }
 
@@ -134,6 +135,7 @@ table tbody tr td a:hover, table tbody tr td a:active, table tbody tr td a:focus
 table tfoot td {
   padding: 0.35em 0 .35em;
   text-align: left;
+  font-family: 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 1.25em;
 }
 
@@ -147,4 +149,15 @@ table tfoot td {
   table tbody tr {
     border-bottom: 1px solid #ddd;
   }
+}
+
+/* 6- Alerts
+----------------------*/
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  moz-border-radius: 4px;
+  webkit-border-radius: 4px;
 }
