@@ -44,7 +44,7 @@ body {
 ----------------------*/
 $no_columns: 6;
 @for $i from 1 through $no_columns {
-  .cols-#{$i} {
+  .col-#{$i} {
     width: ((100 / $no_columns) * $i) * 1%;
   }
 }
@@ -75,14 +75,13 @@ $no_columns: 6;
 $radius: 4px;
 $button-list: success rgb(28, 184, 65), error rgb(202, 60, 60), warning rgb(223, 117, 20),secondary rgb(66, 184, 221);
 @each $button in $button-list {
-    .btn-#{nth($button,1)} { 
-    	color: #ffffff;
-        background-color: nth($button,2);
-        border-radius: $radius;
-        webkit-border-radius: $radius;
-        moz-border-radius: $radius;
-    }
-    
+  .btn-#{nth($button,1)} { 
+  	color: #ffffff;
+    background-color: nth($button,2);
+    border-radius: $radius;
+    webkit-border-radius: $radius;
+    moz-border-radius: $radius;
+  }    
 }
 
 //Using each in SASS 
