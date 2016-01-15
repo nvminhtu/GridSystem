@@ -54,6 +54,8 @@ body {
   background-color: #E6E6E6;
   text-decoration: none;
   border-radius: 2px;
+  webkit-border-radius: 2px;
+  moz-border-radius: 2px;
 }
 
 .btn-success {
@@ -153,11 +155,120 @@ table tfoot td {
 
 /* 6- Alerts
 ----------------------*/
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
+.alert-success, .alert-success-small, .alert-success-large, .alert-info, .alert-info-small, .alert-info-large, .alert-warning, .alert-warning-small, .alert-warning-large, .alert-error, .alert-error-small, .alert-error-large {
+  width: 100%;
+  display: inline-block;
   border-radius: 4px;
-  moz-border-radius: 4px;
-  webkit-border-radius: 4px;
+}
+
+.alert-success p, .alert-success-small p, .alert-success-large p, .alert-info p, .alert-info-small p, .alert-info-large p, .alert-warning p, .alert-warning-small p, .alert-warning-large p, .alert-error p, .alert-error-small p, .alert-error-large p, .alert-success:before, .alert-success-small:before, .alert-success-large:before, .alert-info:before, .alert-info-small:before, .alert-info-large:before, .alert-warning:before, .alert-warning-small:before, .alert-warning-large:before, .alert-error:before, .alert-error-small:before, .alert-error-large:before {
+  float: left;
+}
+
+.alert-success:before, .alert-success-small:before, .alert-success-large:before, .alert-info:before, .alert-info-small:before, .alert-info-large:before, .alert-warning:before, .alert-warning-small:before, .alert-warning-large:before, .alert-error:before, .alert-error-small:before, .alert-error-large:before {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  display: inline-block;
+  content: '';
+  border-radius: 1000px;
+  background: url("../img/icon-sprite.png") no-repeat;
+}
+
+.alert-success p, .alert-success-small p, .alert-success-large p, .alert-info p, .alert-info-small p, .alert-info-large p, .alert-warning p, .alert-warning-small p, .alert-warning-large p, .alert-error p, .alert-error-small p, .alert-error-large p {
+  color: #fff;
+}
+
+.alert-success-small, .alert-info-small, .alert-warning-small, .alert-error-small {
+  padding: 10px;
+}
+
+.alert-success-small p, .alert-info-small p, .alert-warning-small p, .alert-error-small p {
+  font-size: 12px;
+}
+
+.alert-success-small:before, .alert-info-small:before, .alert-warning-small:before, .alert-error-small:before {
+  width: 18px;
+  height: 18px;
+}
+
+.alert-success-large, .alert-info-large, .alert-warning-large, .alert-error-large {
+  padding: 30px;
+}
+
+.alert-success-large p, .alert-info-large p, .alert-warning-large p, .alert-error-large p {
+  font-size: 24px;
+}
+
+.alert-success-large:before, .alert-info-large:before, .alert-warning-large:before, .alert-error-large:before {
+  width: 40px;
+  height: 40px;
+}
+
+.alert-success, .alert-success-small, .alert-success-large {
+  background: #75aa61;
+}
+
+.alert-success:before, .alert-success-small:before, .alert-success-large:before {
+  background-color: #98bf89;
+  background-position: -47px 7px;
+}
+
+.alert-success-small:before {
+  background-position: 4px 5px;
+}
+
+.alert-success-large:before {
+  background-position: -89px 13px;
+}
+
+.alert-info, .alert-info-small, .alert-info-large {
+  background: #6181aa;
+}
+
+.alert-info:before, .alert-info-small:before, .alert-info-large:before {
+  background-color: #89a1bf;
+  background-position: -47px -82px;
+}
+
+.alert-info-small:before {
+  background-position: 4px -57px;
+}
+
+.alert-info-large:before {
+  background-position: -89px -108px;
+}
+
+.alert-warning, .alert-warning-small, .alert-warning-large {
+  background: #cecf60;
+}
+
+.alert-warning:before, .alert-warning-small:before, .alert-warning-large:before {
+  background-color: #dadb88;
+  background-position: -47px -171px;
+}
+
+.alert-warning-small:before {
+  background-position: 4px -116px;
+}
+
+.alert-warning-large:before {
+  background-position: -89px -232px;
+}
+
+.alert-error, .alert-error-small, .alert-error-large {
+  background: #ae6872;
+}
+
+.alert-error:before, .alert-error-small:before, .alert-error-large:before {
+  background-color: #c28e95;
+  background-position: -47px -261px;
+}
+
+.alert-error-small:before {
+  background-position: 4px -177px;
+}
+
+.alert-error-large:before {
+  background-position: -89px -354px;
 }

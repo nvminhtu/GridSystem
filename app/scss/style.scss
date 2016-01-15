@@ -20,6 +20,12 @@ $large-up: 1000px;
 	font-family: 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif;;
 }
 
+@mixin set-border-radius ($radius) {
+  border-radius: $radius;
+  webkit-border-radius: $radius;
+  moz-border-radius: $radius;
+}
+
 body {
   font: 100% $font-stack;
   color: $primary-color;
@@ -70,7 +76,7 @@ $no_columns: 6;
   border: 0 rgba(0,0,0,0);
   background-color: #E6E6E6;
   text-decoration: none;
-  border-radius: 2px;
+  @include set-border-radius(2px);
 }
 
 
@@ -80,9 +86,7 @@ $button-list: success rgb(28, 184, 65), error rgb(202, 60, 60), warning rgb(223,
   .btn-#{nth($button,1)} { 
   	color: #ffffff;
     background-color: nth($button,2);
-    border-radius: $radius;
-    webkit-border-radius: $radius;
-    moz-border-radius: $radius;
+    @include set-border-radius($radius);
   }    
 }
 
@@ -163,11 +167,172 @@ table {
 //Using while in SASS 
 /* 6- Alerts
 ----------------------*/
-.alert {
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	moz-border-radius: 4px;
-	webkit-border-radius: 4px;
+//----- Base Alert Extend
+%alert {
+  width: 100%;
+  display:inline-block;
+  border-radius:4px;
+
+  p, &:before {
+    float:left;
+  }
+
+  &:before {
+    width:25px;
+    height:25px;
+    margin-right:10px;
+    display:inline-block;
+    content:'';
+    border-radius:1000px;
+    background:url('../img/icon-sprite.png') no-repeat;
+  }
+
+  p {
+    color:#fff;
+  }
+}
+
+%alert-small {
+  padding:10px;
+
+  p {
+    font-size:12px;
+  }
+
+  &:before {
+    width:18px;
+    height:18px;
+  }
+}
+
+%alert-large {
+  padding:30px;
+
+  p {
+    font-size:24px;
+  }
+
+  &:before {
+    width:40px;
+    height:40px;
+  }
+}
+
+
+//----- Success
+.alert-success {
+  background:#75aa61;
+  @extend %alert;
+
+  &:before {
+    background-color:#98bf89;
+    background-position:-47px 7px;
+  }
+}
+
+.alert-success-small {
+  @extend %alert-small;
+  @extend .alert-success;
+
+  &:before {
+    background-position:4px 5px;
+  }
+}
+
+.alert-success-large {
+  @extend %alert-large;
+  @extend .alert-success;
+
+  &:before {
+    background-position:-89px 13px;
+  }
+}
+
+//----- Info
+.alert-info {
+  background:#6181aa;
+  @extend %alert;
+
+  &:before {
+    background-color:#89a1bf;
+    background-position:-47px -82px;
+  }
+}
+
+.alert-info-small {
+  @extend %alert-small;
+  @extend .alert-info;
+
+  &:before {
+    background-position:4px -57px;
+  }
+}
+
+.alert-info-large {
+  @extend %alert-large;
+  @extend .alert-info;
+
+  &:before {
+    background-position:-89px -108px;
+  }
+}
+
+
+//----- Warning
+.alert-warning {
+  background:#cecf60;
+  @extend %alert;
+
+  &:before {
+    background-color:#dadb88;
+    background-position:-47px -171px;
+  }
+}
+
+.alert-warning-small {
+  @extend %alert-small;
+  @extend .alert-warning;
+
+  &:before {
+    background-position:4px -116px;
+  }
+}
+
+.alert-warning-large {
+  @extend %alert-large;
+  @extend .alert-warning;
+
+  &:before {
+    background-position:-89px -232px;
+  }
+}
+
+
+//----- Error
+.alert-error {
+  background:#ae6872;
+  @extend %alert;
+
+  &:before {
+    background-color:#c28e95;
+    background-position:-47px -261px;
+  }
+}
+
+.alert-error-small {
+  @extend %alert-small;
+  @extend .alert-error;
+
+  &:before {
+    background-position:4px -177px;
+  }
+}
+
+.alert-error-large {
+  @extend %alert-large;
+  @extend .alert-error;
+
+  &:before {
+    background-position:-89px -354px;
+  }
 }
