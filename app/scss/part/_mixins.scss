@@ -1,0 +1,31 @@
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+  }
+
+//place holder with % (don't re-use class in parent class)
+%clearfix {
+  *zoom: 1;
+  &:before, 
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//extend without using %
+.clearfix {
+   *zoom: 1;
+  &:before, 
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

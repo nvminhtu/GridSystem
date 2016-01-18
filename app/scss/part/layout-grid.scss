@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'mixins';
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  @include border-box;
+}
+
+* {
+  color: #363742;
+}
+span {
+  display: block;
+  background: #c2f0ff;
+  padding: 2em;
+  text-align: center;
+}
+
+.wrapper,
+.row {
+  @extend %clearfix;
+}
+
+// .inner {
+//   @extend .clearfix;
+// }
+
+[class*='column-'] {
+  float: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px; 
+  } 
+
+
+@media #{$breakpoint-medium} {
+  .wrapper {    
+    width: 95%;
+    max-width: $grid-max-width;   
+  }
+  
+  @for $i from 1 through 12 {
+    .column-#{$i} {
+      width: 100% /12 * $i;
+    }
+  }
+}
